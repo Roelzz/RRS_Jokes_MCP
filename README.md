@@ -119,8 +119,8 @@ Create `server.py` with your MCP server implementation. The key part is the HTTP
 # At the bottom of your server.py
 if __name__ == "__main__":
     import sys
-    print("Starting Joke MCP Server with HTTP transport on http://localhost:8000/mcp", file=sys.stderr)
-    mcp.run(transport="http", host="0.0.0.0", port=8000, path="/mcp")
+    print("Starting Joke MCP Server with HTTP transport on http://localhost:2009/mcp", file=sys.stderr)
+    mcp.run(transport="http", host="0.0.0.0", port=2009, path="/mcp")
 ```
 
 ### Step 6: Install Dependencies
@@ -137,14 +137,14 @@ This creates `uv.lock` and installs everything into your virtual environment.
 uv run python server.py
 ```
 
-You should see the startup message about HTTP on localhost:8000. If you see a stack trace instead, the server is upset. Check your code.
+You should see the startup message about HTTP on localhost:2009. If you see a stack trace instead, the server is upset. Check your code.
 
 ### Step 8: Quick Sanity Check
 
 Open another terminal and test the endpoint:
 
 ```bash
-curl -i http://localhost:8000/mcp
+curl -i http://localhost:2009/mcp
 ```
 
 You won't get a pretty page. This is an MCP endpoint - silence or a structured response is normal.
@@ -157,7 +157,7 @@ You won't get a pretty page. This is an MCP endpoint - silence or a structured r
 
 If you're running everything on the same machine, just point Copilot Studio to:
 ```
-http://localhost:8000/mcp
+http://localhost:2009/mcp
 ```
 
 ### Option B: Remote Testing with VS Code Port Forwarding (Better)
@@ -165,7 +165,7 @@ http://localhost:8000/mcp
 If your server is running on a remote machine, dev container, or you want a public URL:
 
 1. **Run your server** in the remote environment
-2. **Open VS Code** - the Ports panel should auto-detect port 8000
+2. **Open VS Code** - the Ports panel should auto-detect port 2009
 3. **Forward the port** - click "Forward Port" in the Ports panel
 4. **Make it public** if you want a shareable URL
 5. **Copy the forwarded URL** (e.g., `https://xyz.devtunnels.ms`)
@@ -198,7 +198,7 @@ This example skips authentication to keep things simple. For production, **you a
 
 | Problem | Fix |
 |---------|-----|
-| Port already in use | Change the port in `server.py`, or kill whatever's using 8000 |
+| Port already in use | Change the port in `server.py`, or kill whatever's using 2009 |
 | Package not found | Make sure you ran `uv add mcp` with the correct package name |
 | Windows firewall prompt | Allow local access, unless you enjoy debugging networking |
 | Connection refused in Copilot Studio | Check your port forwarding and make sure the `/mcp` path is included |
@@ -323,7 +323,7 @@ Docker/Podman automatically pulls the right architecture for their CPU.
 
 3. **Ingress:**
    - Enable ingress
-   - Set target port to `8000`
+   - Set target port to `2009`
    - Enable external traffic
 
 4. Review and create
@@ -361,7 +361,7 @@ Test again. If it works, congratulations - you just deployed your first MCP serv
 
 **Azure deployment issues:**
 - Confirm image pushed to registry successfully
-- Check ingress settings (port 8000, external enabled)
+- Check ingress settings (port 2009, external enabled)
 - Review container logs in Azure Portal
 
 **Copilot Studio can't connect:**
