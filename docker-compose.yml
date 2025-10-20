@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  joke-mcp:
+    build: .
+    container_name: joke-mcp
+    ports:
+      - "2009:2009"
+    restart: unless-stopped
