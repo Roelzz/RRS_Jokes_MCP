@@ -155,7 +155,7 @@ You won't get a pretty page. This is an MCP endpoint - silence or a structured r
 
 ### Option A: Direct Local Testing (Quick)
 
-If you're running everything on the same machine, just point Copilot Studio to:
+If you're running everything on the same machine, just point Claude or VS-Code or MCP capable agents to:
 ```
 http://localhost:2009/mcp
 ```
