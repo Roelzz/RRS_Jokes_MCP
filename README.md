@@ -1,6 +1,6 @@
 # Python-based MCP Server Tutorial - Deploy to Azure
 
-A straightforward guide to building your first Model Context Protocol (MCP) server in Python, testing it locally, containerizing it with Podman, and deploying it to Azure Container Apps. No fluff. Just the steps that work. Idea based on a repository from my collegue [Daniel](https://github.com/microsoft/copilot-studio-mcp/commits?author=Laskewitz), [link](https://github.com/microsoft/copilot-studio-mcp/tree/main/samples/jokesmcp-http-typescript).
+A straightforward guide to building your first Model Context Protocol (MCP) server in Python, testing it locally, containerizing it with Podman, and deploying it to Azure Container Apps. No fluff. Just the steps that work. Idea based on a repository from my collegue [Daniel](https://github.com/microsoft/copilot-studio-mcp/commits?author=Laskewitz), but rebuild in Python. [link](https://github.com/microsoft/copilot-studio-mcp/tree/main/samples/jokesmcp-http-typescript).
 
 This tutorial uses a joke server as an example, but the pattern works for any MCP server you want to build.
 
